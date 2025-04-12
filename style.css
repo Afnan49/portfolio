@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: lightgray;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+.back-vid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  mix-blend-mode: overlay;
+}
+/* =======< start header >======= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.123);
+  height: 70px;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 30px;
+  box-shadow: 0 0 15px #72a1de68;
+  z-index: 999;
+}
+.left {
+  display: flex;
+  align-items: center;
+}
+.left img {
+  width: 57px;
+  margin: 0 15px;
+  border-radius: 50%;
+}
+.left .name {
+  color: #ed8f8f;
+}
+.left .first-name {
+  color: #72a1de;
+}
+header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  background-color: rgba(0, 0, 69, 0.3);
+  padding: 15px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #727fde65;
+}
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  margin: 0 10px;
+}
+.box-icon {
+  display: flex;
+  gap: 40px;
+}
+.box-icon a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  color: lightgrey;
+  border-radius: 50%;
+  border: 2px solid #727fde;
+  transition: all 0.3s ease-in-out;
+}
+.box-icon a:hover {
+  background-color: #727fde;
+  color: black;
+  box-shadow: 0 0 15px #727fde6f;
+}
+/* =======< end header >======= */
+/* =======< start blackhole >======= */
+.blackhole-box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  mix-blend-mode: lighten;
+  justify-content: center;
+}
+.blackhole-box video {
+  width: 100%;
+  margin-top: -23.5%;
+}
+/* =======< end blackhole >======= */
+/* =======< start hero section >======= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero .hero-info {
+  position: absolute;
+  left: 5%;
+}
+.hero .hero-info .hero-info-title {
+  color: #727fde;
+  padding: 8px 5px;
+  border: 1px solid #727fde77;
+  width: 240px;
+  box-shadow: 0 0 5px #727fde88;
+  border-radius: 50px;
+  background-color: #2200493d;
+}
+.hero .hero-info h1 {
+  font-size: 60px;
+  max-width: 600px;
+  font-weight: 700;
+  line-height: 70px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.hero .hero-info p {
+  max-width: 550px;
+  line-height: 25px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+.hero .hero-info button {
+  color: white;
+  padding: 15px 35px;
+  border-radius: 10px;
+  border: 1px solid #727fdeb4;
+  background-color: #2200493d;
+  box-shadow: 0 0 5px #727fde86;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.hero .hero-info button:hover {
+  box-shadow: 0 0 15px #727fde86;
+}
+/*= hero video =*/
+.hero-vid-box {
+  position: absolute;
+  right: 3%;
+}
+.hero-vid-box video {
+  height: 900px;
+  mix-blend-mode: lighten;
+}
+/*= scroll down =*/
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 2px solid lightgrey;
+  position: absolute;
+  left: 49%;
+  bottom: 8%;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(211, 211, 211, 0.477);
+}
+/* =======< end hero section >======= */
+/* ======< start media >======= */
+/* ==< video responsive >== */
+
+@media (max-aspect-ratio: 16/9) {
+  .back-vid {
+    width: auto;
+    height: 100%;
+  }
+}
+@media (min-aspect-ratio: 16/9) {
+  .back-vid {
+    width: 100%;
+    height: auto;
+  }
+}
+/* ======< end media >======= */
+/* ======< strat gradient animation >====== */
+.graduient {
+  background: linear-gradient(
+    to right,
+    #008baa,
+    #7e42a7,
+    #6600c5,
+    #6070fd,
+    #2a46ff,
+    #0099ff,
+    #008ead
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gardientAnimation 2.5s linear infinite;
+}
+
+/* ======< end gradient animation >====== */
+/* ======< start animation >======= */
+@keyframes gardientAnimation {
+  0% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+/* ======< end animation >======= */
