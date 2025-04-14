@@ -12,13 +12,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 100px;
+  background-color: #001f7c38;
 }
 .back-vid {
   position: fixed;
   right: 0;
   bottom: 0;
   z-index: -1;
-  mix-blend-mode: overlay;
+  mix-blend-mode: lighten;
 }
 /* =======< start header >======= */
 header {
@@ -178,6 +179,24 @@ header ul li a {
   cursor: pointer;
   box-shadow: 0 0 15px rgba(211, 211, 211, 0.477);
 }
+.scroll-down::after,
+.scroll-down::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 50%;
+  width: 10px;
+  height: 10px;
+  border: 2px solid lightgray;
+  border-top: transparent;
+  border-left: transparent;
+  transform: translate(50%, -100%) rotate(45deg);
+  animation: scrollDown 1.5s ease-in-out infinite;
+}
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.4s;
+}
 /* =======< end hero section >======= */
 /* ======< start media >======= */
 /* ==< video responsive >== */
@@ -221,6 +240,19 @@ header ul li a {
   }
   100% {
     background-position: 0%;
+  }
+}
+@keyframes scrollDown {
+  0% {
+    opacity: 0;
+  }
+  30%,
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 99%;
+    opacity: 0;
   }
 }
 /* ======< end animation >======= */
